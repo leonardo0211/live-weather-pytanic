@@ -6,6 +6,7 @@ Welcome to the Live Weather App by Pytanic. This application is designed to prov
 ## Documentation
 💡 Want to learn how it works?  
 Just click the **`Docs`** button in the navigation bar on the 🌐 [live-weather-pytanic](https://aasher-3689.github.io/live-weather-pytanic/) to explore everything in detail!
+![shot](https://github.com/user-attachments/assets/ba8e0e90-2972-4341-af5d-ac1500bbb104)
 ## Author and License
 - Developed by: [Aasher](https://github.com/Aasher-3689/)
 - Contact info: aasher36890@gmail.com
