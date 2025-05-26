@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Live Weather - Pytanic</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png"/>
+    <link rel="stylesheet" href="styles/style-mp.css"/>
+    <link rel="stylesheet" href="styles/style-wp.css"/>
+    <link rel="stylesheet" href="styles/style-loader.css"/>
+    <link rel="stylesheet" href="styles/style-contact.css"/>
+    <link rel="stylesheet" href="styles/style-docs.css"/>
+    <link rel="stylesheet" href="styles/style-donate.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Live Weather - Pytanic: Check current weather of your city (A Practice Project)">
+    <meta name="keywords" content="Weather, Pytanic, Live Weather">
+    <meta name="author" content="Muhammad Aasher">
+</head>
+<body>
+    <div class="main-page", id="main-page">
+        <header class="header-mp">
+            <img class="profile" src="assets/profile.png" alt="profile">
+            <h2 class="title">Live Weather - Pytanic</h2>
+            <nav class="header-right-1">
+                <button class="header-c" onclick="openContactPage()">Contact</button>
+                <button class="header-d" onclick="openDocs()">Docs</button>
+                <button class="header-e" onclick="openDonatePage()">Donate</button>
+            </nav>
+            <nav class="header-right-2">
+                <button class="hamburger-button" id="hamburger-button"><img src="assets/hamburger.png" alt="..." style="background-color: rgba(0, 0, 0, 0.661);"></button>
+                <div id="hambList" class="hambList">
+                    <button class="header-c" onclick="openContactPage()">Contact</button>
+                    <button class="header-d" onclick="openDocs()">Docs</button>
+                    <button class="header-e" onclick="openDonatePage()">Donate</button>
+                </div>
+            </nav>
+        </header>
+        <main class="content-mp">
+            <div class="content-mp-2">
+                <button class="content-mp-img"><img  onclick="getWeather()" src="assets/main-page-image.png" alt="image"></button>
+                <input class="search-input" id="search-input" type="search" placeholder="Address, City or Zip Code" spellcheck="false" >
+                <p class="search-info">Click the <span style="color:rgb(61, 154, 235)">Cloud</span> above to continue...</p>
+            </div>
+        </main>
+    </div>
+    <div class="weather-page", id="weather-page">
+        <div class="home-button-div">
+            <button class="home-button" onclick="backHome()"><img src="assets/home-button-3.png" alt="home"><h2>HOME</h2></button>
+        </div>
+        <main class="weather-info-div">
+            <div class="weather-info-div-2">
+                <div class="location" id="location"></div>
+                <hr style="border-top: 1px solid rgb(61, 154, 235);">
+                <div class="other-than-location" id="other-than-location">
+                    <div class="icon-condition" id="icon-condition"></div>
+                    <div class="temp-feel" id="temp-feel"></div>
+                    <div class="other-w-details" id="other-w-details"></div>
+                </div>
+                <hr style="border-top: 1px solid rgb(61, 154, 235);">
+                <div class="src"><p>Src: openweathermap.org</p></div>
+            </div>
+        </main>
+    </div>
+    <div class="loader" id="loader" style="display:none;"></div>
+    <div class="contact-page" id="contact-page">
+        <form class="contact-form" id="contact-form" onsubmit="sentMail(event)">
+            <input class="cf-input-1" type="text" placeholder="Your Name" name="name" id="name" required>
+            <input class="cf-input-1" type="email" placeholder="Email" name="email" id="email" required>
+            <textarea rows="10" class="cf-input-2" placeholder="Your Message" name="message" id="message" required></textarea>
+            <div style="width:100%; display:flex;justify-content:right;column-gap:20px;">
+                <button type="button" class="cf-home-button" onclick="backHome()"><img src="assets/home-button-4.png" alt="home"></button>
+                <button class="cf-send" type="submit">SEND</button>
+            </div>
+        </form>
+        <div id="status-cf" class="status-cf" style="padding-bottom:1rem;display:none;"></div>
+    </div>
+    <div class="docs-page" id="docs-page">
+        <div class="docs-content-div">
+            <button class="dp-home-button" onclick="backHome()">
+                <img src="assets/home-button-5.png">
+            </button>
+            <main class="docs-content-div-2">
+                <p>Welcome to the Live Weather App by Pytanic. 
+                    This application is designed to provide real-time 
+                    weather updates for cities around the world in a
+                     clean, simple, and responsive interface.</p>
+                <h1>Home Page:</h1>
+                <p>When you open the website, 
+                    you are greeted by a clean home page
+                     that acts as the starting point for checking live 
+                     weather conditions.</p>
+                <div><img src="assets/docs-guide/main-page.png" alt="main-page"></div>
+                <p>Prominently featured in the center is a <strong>search bar</strong> 
+                    , where you can enter the name of any city in the world 
+                    to look up its weather information. Just above the search 
+                    bar, there's a <strong>cloud-shaped button</strong> that you can click to 
+                    submit your search and continue to the weather results page. 
+                    In the top-right corner, you'll find quick navigation links to <strong>Contact</strong>, 
+                    <strong>Docs</strong>, and <strong>Donate</strong> pages — 
+                    each of which is explained in detail below.</p>
+                <p>Every page within the application—whether it's the weather results, 
+                    contact, documentation, or donation page—includes a 
+                    <strong>Home button</strong> <img src="assets/home-button-5.png" style="width:1rem;margin:0;box-shadow:none;border-radius:0;">. 
+                    This button allows users to return to the main home screen at any time.</p>
+                <h1>Weather Page:</h1>
+                <p>After entering a city name on the home page and clicking the cloud button, 
+                    you are directed to the Weather Results Page, where detailed weather 
+                    information is displayed in a neat and readable format.</p>
+                <div><img src="assets/docs-guide/weather-page.png" alt="weather-page"></div>
+                <p>At top left corner <strong>Home button</strong> <img src="assets/home-button-5.png" style="width:1rem;margin:0;box-shadow:none;border-radius:0;"> 
+                    is available, allowing you to return to the main page 
+                    with a single click. At the top of the weather results section, the name of the 
+                    <strong>city and its country</strong> is prominently displayed. Just below this, 
+                    on the bottom left you’ll find the <strong>weather condition</strong> 
+                    (e.g., Clear, Rainy) accompanied by a matching icon for quick visual reference.
+                    Just right to the weather condition, the <strong>current temperature</strong> 
+                    is clearly shown in celsius, making it the focal point of the display.
+                    On the right side, several detailed weather metrics are displayed. These include the 
+                    <strong>"feels like" temperature</strong> (in degrees Celsius), 
+                    <strong>humidity</strong> (expressed as a percentage), 
+                    <strong>cloud coverage</strong> (in percentage), 
+                    <strong>wind speed</strong> (measured in meters per second), 
+                    <strong>wind direction</strong> (in degrees), and 
+                    <strong>visibility</strong>, which is shown in kilometers 
+                    with a maximum value of 10 km.</p>
+                <p>All of this weather data is sourced from the reliable API service 
+                    <a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>.</p>
+                <h1>Contact Page:</h1>
+                <p>After clicking the <strong>Contact</strong> in the navigation menu at the 
+                    <strong>top right corner</strong> of the main page, you’ll be directed to 
+                    the Contact Page. Whether you have questions, feedback, 
+                    or want to report an issue, this is where you can reach out.</p>
+                <div><img src="assets/docs-guide/contact-page.png" alt="contact-page"></div>
+                <p>The page includes three fields: <strong>Name, Email, and Message</strong>. 
+                    Users can enter their contact information and describe their 
+                    inquiry or feedback in the message box. Once the form is filled, 
+                    clicking the Send button will submit your message. Like other pages in the app, 
+                    a <strong>Home button</strong> <img src="assets/home-button-5.png" style="width:1rem;margin:0;box-shadow:none;border-radius:0;"> 
+                    is available to take you back to the main page at any time.</p>
+                <h1>Donate Page:</h1>
+                <p>When you click the <strong>Donate</strong> button in the <strong>top-right navigation</strong> 
+                    of the main page, you’ll be directed to the Donate page. This page provides an option to 
+                    support the project financially, purely as a gesture of appreciation.</p>
+                <div><img src="assets/docs-guide/donate-page-1.png" alt="donate-page"></div>
+                <p>The page includes a cryptocurrency section, where you can find wallet addresses for 
+                    popular currencies such as <strong>USDT (on BEP20, Ethereum, and Tron networks)</strong>, 
+                    as well as <strong>XRP</strong>, <strong>Ethereum</strong> and <strong>BTC</strong>. 
+                    A Fiat currency section is also included, although donations through fiat 
+                    (such as bank transfer) are not available yet and will be added soon.</p>
+                <div><img src="assets/docs-guide/donate-page-2.png" alt="donate-page"></div>
+                <p>To the right of each wallet address, there's a button that opens a 
+                    popup displaying the <strong>QR code</strong> for that specific address, 
+                    making it easy to scan and send crypto directly.</p>
+                <div><img src="assets/docs-guide/donate-page-3.png" alt="donate-page"></div>
+            </main>
+        </div>
+    </div>
+    <div class="donate-page" id="donate-page">
+        <div class="donate-content-div">
+            <button class="dp-home-button" onclick="backHome()">
+                <img src="assets/home-button-5.png">
+            </button>
+            <main class="donate-content-div-2 centered" id="donate-content-div-2">
+                <div class="crypto-donate" id="crypto-donate">
+                    <button class="crypto-d-button" id="crypto-d-button">
+                        Crypto Currency <img src="assets/down-icon.png" alt="down-nav">
+                    </button>
+                    <div id="crypto-content" class="crypto-content">
+                        <div class="crypto-name">USDT (BEP20):
+                            <div>0xA69a32F27858E56AF984115C54EE56FB65a4B17F
+                                <button onclick="showQrCrypto(this)"><img src="assets/qrcode-icon.png" alt="qrcode"></button>
+                            </div>
+                        </div>
+                        <div class="crypto-name">USDT (TRC20):
+                            <div>TDnFRWFBAFy1dR8iWP7gd18sqLPZYCS1jW
+                                <button onclick="showQrCrypto(this)"><img src="assets/qrcode-icon.png" alt="qrcode"></button>
+                            </div>
+                        </div>
+                        <div class="crypto-name">USDT (ERC20):
+                            <div>0xA69a32F27858E56AF984115C54EE56FB65a4B17F
+                                <button onclick="showQrCrypto(this)"><img src="assets/qrcode-icon.png" alt="qrcode"></button>
+                            </div>
+                        </div>
+                        <div class="crypto-name">XRP (XRP):
+                            <div>rJBFbz8rqGYWeenQqkfqQFZjC1CnKJig1w
+                                <button onclick="showQrCrypto(this)"><img src="assets/qrcode-icon.png" alt="qrcode"></button>
+                            </div>
+                        </div>
+                        <div class="crypto-name">Ethereum (ETH):
+                            <div>0xA69a32F27858E56AF984115C54EE56FB65a4B17F
+                                <button onclick="showQrCrypto(this)"><img src="assets/qrcode-icon.png" alt="qrcode"></button>
+                            </div>
+                        </div>
+                        <div class="crypto-name">Bitcoin (BTC):
+                            <div>bc1qcnw4g5l79dt2qgn7hlrfkqrhu8zwnl0d9aeutw
+                                <button onclick="showQrCrypto(this)"><img src="assets/qrcode-icon.png" alt="qrcode"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fiat-donate" id="fiat-donate">
+                    <button class="fiat-d-button" id="fiat-d-button">
+                        Fiat Currency <img src="assets/down-icon.png" alt="down-nav">
+                    </button>
+                    <div id="fiat-content" class="fiat-content">
+                        Comming Soon!
+                    </div>
+                </div>
+                <div class="donate-mesg">This project is completely free and open for everyone. 
+                    If you enjoy using it and wish to support its continued 
+                    development, you’re welcome to donate — only if you’d 
+                    like to. Your generosity is appreciated, but never expected.
+                </div>
+            </main>
+        </div>
+        <div class="qr-crypto"><img src="" onclick="showQrCrypto(this)">
+        Tap the QR code to make it disappear.</div>
+    </div>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

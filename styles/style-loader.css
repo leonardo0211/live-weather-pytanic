@@ -1,0 +1,22 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 120px;
+    height: 120px;
+    border-top: 16px double rgb(55, 137, 225);
+    border-bottom: 16px double rgb(55, 137, 225);
+    border-radius: 50%;
+    animation: spinner 0.7s reverse infinite;
+    -webkit-animation: spinner 0.7s reverse infinite;
+}
+@keyframes spinner {
+    0%   {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+@-webkit-keyframes spinner {
+    0%   {-webkit-transform: translate(-50%, -50%) rotate(0deg);}
+    100% {-webkit-transform: translate(-50%, -50%) rotate(360deg);}
+}

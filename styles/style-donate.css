@@ -1,0 +1,192 @@
+.donate-page {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.donate-content-div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 90%;
+    overflow-y: hidden;
+    padding: 1.5rem;
+    background-color: #f0f6fca9;
+    border-radius: 2rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.donate-content-div * {
+    background-color: transparent;
+    color: #0d1117;
+}
+
+.donate-content-div-2 {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scrollbar-color: #575757 transparent;
+    font-size: 1rem;
+    row-gap: 1rem;
+    margin-top: 1rem;
+}
+
+.donate-content-div-2.centered {
+    justify-content: center;
+}
+
+.donate-content-div-2 * {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.crypto-donate, .fiat-donate {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.crypto-d-button, .fiat-d-button {
+    width: 90%;
+    height: 5rem;
+    display:flex;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "arial-rounded";
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    background-color: #f0f6fc68;
+    border-radius: 1rem;
+    border-bottom: 6px solid rgb(8, 97, 175);
+    transition: border-bottom 0.3s ease;
+}
+
+.crypto-d-button img, .fiat-d-button img {
+    width: 1rem;
+    transition: rotate 0.1s linear;
+}
+
+.crypto-d-button:hover, .fiat-d-button:hover {
+    border-bottom: 6px solid rgba(143, 129, 4, 0.966);
+}
+
+.donate-mesg {
+    width: 90%;
+    color: #4e4f51;
+    padding-top: 2rem;
+    padding-bottom: 8px;
+}
+
+/*###########################*/
+
+.fiat-content, .crypto-content {
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    background-color: #f0f6fc31;
+    padding: 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    border-bottom: 6px solid rgb(8, 97, 175);
+    row-gap: 10px;
+}
+
+.fiat-content {
+    align-items: center;
+}
+
+.crypto-name {
+    font-family: "arial-rounded";
+    color: #0d1117a4;
+}
+
+.crypto-name div {
+    margin: 8px 0;
+    padding: 8px 0 8px 8px;
+    font-family: "mono";
+    background-color: #0d111784;
+    color: #f0f6fc;
+    border-radius: 4px;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-color: #989898 transparent;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crypto-name div button {
+    border: 0;
+    outline: 0;
+    height: 16px;
+    margin: 0 10px 0 2rem;
+    transition: transform 0.1s linear;
+    &:hover {
+        transform: rotate(45deg);
+    }
+}
+
+.crypto-name div button img {
+    width: 16px;
+}
+
+/*###########################*/
+
+.qr-crypto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 2rem #0d1117;
+    row-gap: 4px;
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.qr-crypto img {
+    border-radius: 1.5rem;
+}
+
+@media only screen and (max-width:1216px) {
+    .donate-content-div {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:1010px) {
+    .donate-content-div {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:868px) {
+    .donate-content-div {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:757px) {
+    .donate-content-div {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:680px) {
+    .donate-content-div {
+        width: 95%;
+        height: 95%;
+    }
+}

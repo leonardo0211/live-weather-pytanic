@@ -1,0 +1,110 @@
+.docs-page {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.docs-content-div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 90%;
+    overflow-y: hidden;
+    padding: 1.5rem;
+    background-color: #f0f6fca9;
+    border-radius: 2rem;
+}
+
+.docs-content-div * {
+    background-color: transparent;
+    color: #0d1117
+}
+
+.dp-home-button {
+    position: sticky;
+    top: 0;
+    width: min-content;
+    border: 0;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.dp-home-button:hover {
+    transform: scale(1.05);
+}
+
+.docs-content-div-2 {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    scrollbar-color: #575757 transparent;
+    font-size: 1rem;
+}
+
+.docs-content-div-2 p, .docs-content-div-2 h1 {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.docs-content-div-2 h1 {
+    margin: 10px 0;
+    font-family: "arial-rounded";
+}
+
+.docs-content-div-2 div {
+    display: flex;
+    justify-content: center;
+}
+
+.docs-content-div-2 img {
+    margin: 1.5rem 0;
+    width: 60%;
+    border-radius: 1rem;
+    box-shadow: 0 0 16px 0 rgb(61, 154, 235);
+}
+
+@media only screen and (max-width:1216px) {
+    .docs-content-div {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:1010px) {
+    .docs-content-div {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:868px) {
+    .docs-content-div {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:757px) {
+    .docs-content-div {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:680px) {
+    .docs-content-div {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+@media only screen and (max-width:530px) {
+    .docs-content-div-2 img {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:475px) {
+    .docs-content-div-2 img {
+        width: 90%;
+    }
+}

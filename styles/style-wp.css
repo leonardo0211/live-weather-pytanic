@@ -1,0 +1,147 @@
+.weather-page {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.home-button {
+    border: 0;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    font-family: "arial-rounded";
+    letter-spacing: 2px;
+    opacity: 0.9;
+    transition: transform 0.3s;
+}
+
+.home-button:hover {
+    transform: scale(1.05);
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.weather-info-div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-info-div-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 2rem;
+    overflow-x: hidden;
+}
+
+.other-than-location {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.icon-condition, .temp-feel, .other-w-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.location {
+    align-self: flex-start;
+    margin-bottom: 2px;
+}
+
+.location-p {
+    font-size: 20px;
+    color: #f0f6fcbd;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.other-than-location {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon-condition {
+    align-items: center;
+}
+
+.weatherCondi {
+    font-size: 2rem;
+    font-family: "arial-rounded"
+}
+
+.weatherDescrip {
+    color: #f0f6fcbd;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.temp-feel {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+}
+
+.temp {
+    font-size: 2.5rem;
+    font-family: "arial-rounded";
+    color: rgb(99, 175, 242);
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.other-w-details {
+    width: 200px;
+    justify-content: center;
+    align-items: end;
+}
+
+.other-w-details p {
+    color: #f0f6fcbd;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.src {
+    align-self: flex-end;
+    margin-top: 8px;
+}
+
+.src p {
+    color: #f0f6fc6f;
+    font-style: oblique;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+@media only screen and (max-width:545px) {
+    .other-w-details {
+        width: auto;
+    }
+
+    .home-button {
+        margin-left: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:490px) {
+    .temp {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:440px) {
+    .weatherCondi {
+        font-size: 1.5rem;
+    }
+    .temp {
+        font-size: 1.7rem;
+    }
+}
